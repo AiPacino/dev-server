@@ -1,0 +1,102 @@
+
+
+.syntaxhighlighter {
+    font-size: 14px !important;
+/*    font-size: 1em !important;*/
+    margin: 1em 0 !important;
+    overflow: auto !important;
+    position: relative !important;
+    width: 100% !important;
+    background-color: #fff !important;
+}
+.syntaxhighlighter table {
+    width: 100% !important;
+}
+
+syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+    border: 0 none !important;
+    bottom: auto !important;
+    box-sizing: content-box !important;
+    float: none !important;
+    font-family: "Courier New","Consolas","Bitstream Vera Sans Mono",Courier,monospace !important;
+    font-size: 12px !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    height: auto !important;
+    left: auto !important;
+    line-height: 2em !important;
+    margin: 0 !important;
+    min-height: auto !important;
+    outline: 0 none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    position: static !important;
+    right: auto !important;
+    text-align: left !important;
+    top: auto !important;
+    vertical-align: baseline !important;
+    width: auto !important;
+}
+
+.syntaxhighlighter .gutter {
+    color: #afafaf !important;
+}
+
+.syntaxhighlighter table td.gutter .line {
+    padding: 0 0.5em 0 1em !important;
+    text-align: right !important;
+}
+
+.syntaxhighlighter .line.alt2 {
+    background-color: #f8f8f8 !important;
+}
+
+.syntaxhighlighter .gutter .line {
+    border-right: 3px solid #6ce26c !important;
+}
+.syntaxhighlighter .line {
+    white-space: nowrap !important;
+}
+
+.syntaxhighlighter table td.code {
+    width: 100% !important;
+}
+.syntaxhighlighter table td.code .container {
+    position: relative !important;
+}
+
+.syntaxhighlighter .container::before, .container::after {
+    display: block !important;
+}
+
+.syntaxhighlighter .line.alt2 {
+    background-color: #f8f8f8 !important;
+}
+
+.syntaxhighlighter .line.alt1 {
+    background-color: #fff !important;
+}
+.syntaxhighlighter .string, .syntaxhighlighter .string a {
+    color: blue !important;
+}
+
+.syntaxhighlighter .null{
+    color: red !important;
+}
+
+.syntaxhighlighter .json_key, .syntaxhighlighter .json_key a {
+    color: #92278f !important;
+}
+.json_int{
+    color: #3ab54a !important;
+}

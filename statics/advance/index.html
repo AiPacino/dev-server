@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>机市-三星S9预约租赁 赢1年免费使用权</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    body {
+      background-color: #fff;
+      -webkit-overflow-scrolling: touch
+    }
+
+    img {
+      border: none;
+      display: block;
+      background: transparent;
+    }
+
+    a {
+      text-decoration: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    input,
+    button {
+      border: none;
+      outline: none;
+    }
+
+    .bg-imgs {
+      font-size: 0;
+    }
+
+    .bg {
+      width: 100%;
+    }
+
+    .modal {
+      position: fixed;
+      visibility: hidden;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 3;
+    }
+
+    .modal-layer {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .5);
+    }
+
+    .form-wrap {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      padding: 15px;
+      width: 80%;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 5px;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      position: fixed;
+      top: 50%;
+      left: 50%;
+    }
+
+    .form-wrap h3 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .form {
+      display: block;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #fff;
+
+    }
+
+    .form-group {
+      border: 1px solid #eee;
+      padding: 10px;
+      text-align: left;
+      display: flex;
+    }
+
+    .form-group:first-of-type {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom: 0;
+    }
+
+    .form-group:last-of-type {
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .form-group span {
+      vertical-align: baseline;
+    }
+
+    .input-code,
+    .input-tel,
+    .form-submit {
+      background-color: transparent;
+      outline: none;
+      border: 0;
+      color: #000;
+      font-size: 16px;
+
+    }
+
+    .input-code,
+    .input-tel {
+      height: 25px;
+      border-radius: 0;
+      width: 100%;
+      display: inline-block;
+    }
+
+    .input-tel {
+      flex: 2;
+    }
+
+    .form-submit {
+      color: #fff;
+      font-size: 16px;
+      margin: 12px auto 0;
+      width: 200px;
+      height: 38px;
+      line-height: 38px;
+      display: inline-block;
+      background: url("./images/submit.png") no-repeat center center;
+      background-size: contain;
+    }
+
+    .code-btn {
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 25px;
+      text-align: center;
+      flex: 1;
+      display: inline-block;
+      height: 25px;
+      background: url("./images/code.png") no-repeat center center;
+    }
+
+    .toast-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%);
+      -moz-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+      -o-transform: translate(-50%);
+      transform: translate(-50%);
+      background: rgba(0, 0, 0, .5);
+      color: #ffffff;
+      font-size: 16px;
+      visibility: hidden;
+      z-index: 99;
+      border-radius: 5px;
+      padding: 5px;
+      white-space: nowrap;
+    }
+
+    .toast-tip {
+      height: 30px;
+      line-height: 30px;
+    }
+
+    #cnzz_stat_icon_1273060387 {
+      display: none;
+    }
+    .back-btn{
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 30px;
+      height: 30px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background: rgba(101, 101, 101, 0.5) url("./images/arrow.png") no-repeat center center;
+      background-size: 50%;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="back-btn"></div>
+    <div class="modal">
+      <div class="modal-layer"></div>
+      <div class="form-wrap">
+        <h3>申请到货提醒</h3>
+        <form class="form">
+          <div class="form-group">
+            <input type="tel" maxlength="11" name="tel" placeholder="请输入手机号" class="input-tel">
+            <button class="code-btn">获取验证码</button>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="code" placeholder="请输入验证码" class="input-code">
+          </div>
+          <button class="form-submit">提交</button>
+        </form>
+      </div>
+    </div>
+    <div class="bg-imgs">
+      <img class="bg" src="./images/1.jpg">
+      <img class="bg" id="btn" src="./images/2.jpg">
+      <img class="bg" src="./images/3.jpg">
+      <img class="bg" src="./images/4.jpg">
+      <img class="bg" src="./images/5.jpg">
+      <img class="bg" src="./images/6.jpg">
+      <img class="bg" src="./images/7.jpg">
+      <img class="bg" src="./images/8.jpg">
+      <img class="bg" src="./images/9.jpg">
+    </div>
+  </div>
+  <script>
+    window.onload = function () {
+      function parseQueryString() {
+        var str = window.location.search;
+        var objURL = {};
+
+        str.replace(
+            new RegExp("([^?=&]+)(=([^&]*))?", "g"),
+            function ($0, $1, $2, $3) {
+              objURL[$1] = $3;
+            }
+        );
+        return objURL;
+      }
+
+      function formatDate(date, fmt) {
+        var o = {
+          "M+": date.getMonth() + 1,
+          "d+": date.getDate(),
+          "h+": date.getHours(),
+          "m+": date.getMinutes(),
+          "s+": date.getSeconds(),
+          "q+": Math.floor((date.getMonth() + 3) / 3),
+          "S": date.getMilliseconds()
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+          if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+      }
+
+      function Toast(tips, time) {
+        this.tips = tips || ''
+        this.duration = time || 2e3
+        this.show()
+      }
+      Toast.prototype.show = function () {
+        var t = this
+        var tpl = ''
+        tpl += '<div class="toast-popup">'
+        tpl += '    <div class="toast-tip">' + this.tips + "</div>"
+        tpl += "</div>"
+        var toastContainer = document.createElement('div')
+        toastContainer.className = 'toast-container'
+        toastContainer.innerHTML = tpl
+        document.body.appendChild(toastContainer)
+        t.toastContainer = toastContainer
+        t.toastContainer.style.visibility = 'visible'
+        setTimeout(function () {
+          document.body.removeChild(t.toastContainer)
+        }, t.duration)
+      }
+
+
+      function post(url, data, success, error) {
+        var xhr = new XMLHttpRequest()
+        xhr.open("POST", url, true)
+        xhr.setRequestHeader("Content-Type", "text/plain")
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            if (xhr.status == 200 || xhr.status == 304) {
+              try {
+                xhr.data = JSON.parse(xhr.responseText)
+              } catch (err) {
+                xhr.data = {
+                  data: xhr.responseText
+                }
+              }
+              success.call(this, xhr)
+            } else {
+              error.call(this, xhr)
+            }
+          }
+
+        }
+        xhr.send(JSON.stringify(data))
+      }
+
+      var apiURL = 'https://admin-zuji.huishoubao.com/api.php';
+
+      function postData(method, data, success, error) {
+        return post(apiURL, {
+          "appid": '1',
+          "method": method,
+          "params": data,
+          "timestamp": formatDate(new Date(), "yyyy-MM-dd hh:mm:ss"),
+          "auth_token": null,
+          "version": "1.0",
+          "sign_type": "MD5",
+          "sign": ""
+        }, success, error)
+      }
+
+      var openModal = document.getElementById('btn'),
+        codeBtn = document.querySelector('.code-btn'),
+        inputTel = document.querySelector('.input-tel'),
+        inputCode = document.querySelector('.input-code'),
+        submitBtn = document.querySelector('.form-submit'),
+        modal = document.querySelector('.modal'),
+        formWrap = document.querySelector('.form-wrap'),
+        backBtn = document.querySelector('.back-btn')
+
+      var telRegExp = /^0?(13\d|14[5,7]|15[0-3,5-9]|17[0,6-8]|18\d)\d{8}$/
+
+      function modalInit(modal) {
+        modal.style.visibility = 'hidden'
+        modal.addEventListener('touchmove', function (e) {
+          e.preventDefault()
+        })
+        modal.addEventListener('mousewheel', function (e) {
+          e.preventDefault()
+        })
+        modal.addEventListener('click', function (e) {
+          e.stopPropagation()
+          modalHide(modal)
+        })
+      }
+
+      function formWrapInit(formWrap) {
+        formWrap.addEventListener('touchstart', function (e) {
+          e.stopPropagation()
+          return false
+        })
+        formWrap.addEventListener('click', function (e) {
+          e.stopPropagation()
+          return false
+        })
+      }
+
+      function codeBtnInit(timer, start) {
+        if (start == 60) {
+          codeBtn.innerHTML = '获取验证码'
+          clearInterval(timer)
+          timer = null
+          codeBtn.disabled = false
+        }
+      }
+
+      function inputInit(start) {
+        // inputTel.value = ''
+        inputCode.value = ''
+      }
+
+      function modalHide(modal) {
+        modal.style.visibility = "hidden"
+        document.body.style.overflow = 'auto'
+        document.documentElement.style.overflow = 'auto'
+      }
+
+      function modalShow(modal) {
+        modal.style.visibility = "visible"
+        document.body.style.overflow = 'hidden'
+        document.documentElement.style.overflow = 'hidden'
+      }
+
+      function isBase(reg) {
+        return function (val) {
+          return reg.test(val)
+        }
+      }
+
+      function isTel(val) {
+        return isBase(telRegExp)(val)
+      }
+
+      function init() {
+        modalInit(modal)
+        formWrapInit(formWrap)
+
+        openModal.addEventListener('click', function (e) {
+          e.preventDefault()
+          inputInit(start)
+          codeBtnInit(timer, start)
+          modalShow(modal)
+        })
+
+        var timer = null,
+          start,
+          codeBtnTimer = null,
+          submitBtnTimer = null
+
+        codeBtn.addEventListener('click', function (e) {
+          e.preventDefault()
+          e.stopPropagation()
+          start = 60
+          clearTimeout(codeBtnTimer)
+          codeBtnTimer = setTimeout(function () {
+            if (inputTel.value && isTel(inputTel.value)) {
+              if (start === 60) {
+                postData('zuji.sms_code.send',
+                  {
+                    mobile: inputTel.value,
+                    "type": "SM_LOGIN",
+                    "country_code": "86"
+                  }, function (res) {
+                    if (res.status == 200 && res.data.code == 0) {
+                      new Toast('验证码已发送')
+                      codeBtn.disabled = true
+                      timer = setInterval(function () {
+                        start--
+                        codeBtn.innerHTML = start + 's'
+                        if (start <= 0) {
+                          start = 60
+                          codeBtnInit(timer, start)
+                        }
+                      }, 1000)
+                    } else {
+                      new Toast(res.data.msg || '服务异常')
+                    }
+                  },
+                  function (err) {
+                    new Toast('服务繁忙')
+                  })
+              }
+            } else {
+              new Toast('请输入有效手机号')
+              return false
+            }
+          }, 500)
+        })
+
+        submitBtn.addEventListener('click', function (e) {
+          e.preventDefault()
+          clearTimeout(submitBtnTimer)
+          submitBtnTimer = setTimeout(function () {
+            if (!inputTel.value || !isTel(inputTel.value)) {
+              new Toast('请正确输入手机号', 1500)
+              return false
+            }
+            if (!inputCode.value) {
+              new Toast('请输入验证码', 1500)
+              return false
+            }
+            submitBtn.disabled = true
+            postData('zuji.sms_code.verification',
+              {
+                mobile: inputTel.value,
+                code: inputCode.value
+              },
+              function (res) {
+                submitBtn.disabled = false
+                if (res.status == 200) {
+                  if (res.data.code == 0) {
+                    new Toast('预约成功', 5000)
+                    start = 60
+                    codeBtnInit(timer, start)
+                    modalHide(modal)
+                  } else if (res.data.code == 50011) {
+                    new Toast(res.data.msg, 5000)
+                    start = 60
+                    codeBtnInit(timer, start)
+                    modalHide(modal)
+                  } else {
+                    start = 60
+                    codeBtnInit(timer, start)
+                    new Toast(res.data.msg || '预约未成功，请稍后重试', 5000)
+                  }
+                } else {
+                  new Toast(res.data.msg || '预约未成功，请稍后重试', 5000)
+                }
+              },
+              function (err) {
+                submitBtn.disabled = false
+                new Toast('预约未成功，请稍后重试', 5000)
+              })
+          }, 400)
+        })
+        backBtn.addEventListener('click', function (e) {
+          history.back()
+        })
+
+        var urlParams = parseQueryString()
+        if((urlParams && ['2','3'].indexOf(urlParams['appid']) >= 0)||/huishoubao/i.test(navigator.userAgent)){
+          backBtn.style.display = 'block'
+        }
+      }
+
+      init()
+
+
+      if ("alipayclient" == navigator.userAgent.toLowerCase().match(/AlipayClient/i)) {
+        function ready(callback) {
+          // 如果jsbridge已经注入则直接调用
+          if (window.AlipayJSBridge) {
+            callback && callback();
+          } else {
+            // 如果没有注入则监听注入的事件
+            document.addEventListener('AlipayJSBridgeReady', callback, false);
+          }
+        }
+        ready(function () {
+
+          AlipayJSBridge.call('setOptionMenu', {
+            icontype: 'more',
+            preventDefault: false
+          });
+          AlipayJSBridge.call('showOptionMenu');
+
+          document.addEventListener('optionMenu', function (e) {
+            AlipayJSBridge.call("startShare", {
+              'bizType': '', // 业务标识，为空时将会显示默认的分享渠道列表。
+            }, function (data) {
+              console.log(data)
+            })
+          }, false);
+        })
+      }
+    }
+  </script>
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1273060387'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1273060387' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+
+</html>

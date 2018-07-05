@@ -1,0 +1,40 @@
+
+<script type="text/javascript" src="<?php echo __ROOT__;?>statics/js/jquery-1.7.2.min.js" ></script>
+<link rel="stylesheet" href="<?php echo __ROOT__;?>statics/css/login.css?v=<?php echo HD_VERSION ?>"/>
+
+<style type="text/css">
+</style>
+
+<form id="form_login" action="<?php echo url('login');?>" onsubmit="return submit_check()" method="POST" >
+<div class="box">
+<h1>租机后台</h1>
+
+<input type="text" name="username" value=""  class="email" />
+  
+<input type="password" name="password" value="" class="email" />
+  
+<a href="#"><div id="btn2">登录</div></a> <!-- End Btn -->
+
+
+  
+</div> <!-- End Box -->
+<script type="text/javascript">
+
+    $(function(){
+	    var $val=$("input[type=text]").first().val();
+	    $("input[type=text]").first().focus().val($val);
+    })
+    $('.form-group:last-child').css({zIndex:"3"});
+    function submit_check(){
+	    var $user=$("input[name=username]").val();
+	    var $pass=$("input[name=password]").val();
+	    if(!$user || !$pass){
+		    return false;
+	    }
+    }
+    $('#btn2').click(function(){
+	$('#form_login').submit();
+    });
+</script>
+  
+</form>
